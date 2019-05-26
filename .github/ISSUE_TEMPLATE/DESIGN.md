@@ -1,8 +1,8 @@
 ---
-name: 機能変更
-about: 機能の変更
-title: "[CHANGE]: "
-labels: 種類; 機能変更
+name: デザイン
+about: デザイン
+title: "[DESIGN]: "
+labels: 種類: デザイン
 assignees: ''
 ---
 
