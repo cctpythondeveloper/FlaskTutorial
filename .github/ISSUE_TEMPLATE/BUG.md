@@ -1,9 +1,6 @@
 ---
 name: バグ報告
-about: バグの報告
 title: "[BUG]: "
-labels: 種類: バグ
-assignees: ''
 ---
 
 #### 概要
