@@ -2,8 +2,6 @@
 name: デザイン
 about: デザイン
 title: "[DESIGN]: "
-labels: 種類: デザイン
-assignees: ''
 ---
 
 #### 概要
