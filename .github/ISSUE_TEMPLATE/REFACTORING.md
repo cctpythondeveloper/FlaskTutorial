@@ -1,9 +1,7 @@
 ---
 name: リファクタリング
 about: リファクタリング
-title: "[REFACTOR]: "
-labels: 種類: リファクタリング
-assignees: ''
+title: "[CLEAN]: "
 ---
 
 #### 概要
