@@ -1,0 +1,17 @@
+{% extends "layout.html" %}}
+{% block body %}
+    <h2>トップページ</h2>
+    {% if session.logged_in %}
+      <h3>ログイン成功!</h3>
+      <table>
+        <tr>
+          <td>User Name:</td>
+          <td>{{ userinfo.username }}</td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td>{{ userinfo.password }}</td>
+        </tr>
+      </table>
+    {% endif %}
+{% endblock %}
