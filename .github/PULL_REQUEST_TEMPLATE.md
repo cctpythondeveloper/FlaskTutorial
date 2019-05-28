@@ -1,3 +1,4 @@
+close #<issue番号>
 #### 対応issue
 
 #<issue番号>
