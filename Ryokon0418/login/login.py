@@ -34,9 +34,6 @@ def login():
         return render_template('toppage.html', userinfo=userinfo)
     return render_template('index.html', error=error)
 
-@app.route('/top', methods=['GET'])
-def toppage(userinfo):
-    return render_template('toppage.html', userinfo=userinfo)
 
 if __name__ == '__main__':
     app.run()
