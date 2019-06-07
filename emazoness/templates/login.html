@@ -8,16 +8,20 @@
 </head>
 <body>
    <main>
+     <form action="login" method="POST">
+       <blockquote>
       <div class="column">
         <h2>UserID:</h2>
-        <input type="text" value=""/>
+        <input type="username" name="username" />
       </div>
       <div class="column">
         <h2>Password:</h2>
-        <input type="password" value=""/>
+        <input type="password" name="password" />
       </div>
+    </blockquote>
 
-      <input type="button" name="login_btn" value="Login">
+      <input type="submit" name="login_btn" value="Login">
+    </form>
     </main>
 </body>
 </html>
