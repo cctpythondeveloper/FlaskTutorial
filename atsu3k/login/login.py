@@ -18,31 +18,23 @@ class User():
         self.username = username
         self.password = password
 
-# If GET methods, transit to Login window.
 @app.route('/', methods=['GET'])
 def form():
     return render_template('login.html')
 
-# Error check
 @app.route('/login', methods=['POST'])
 def login():
-    error = None
+    msg = None
     if request.method == 'POST':
-        if request.form['username'] != app.config['USERNAME']:
-            error = 'Invalid username'
-        elif request.form['password'] != app.config['PASSWORD']:
-            error = 'Invalid password'
+        if request.form['username'] != app.config['USERNAME'] or request.form['password'] != app.config['PASSWORD']:
+            error_msg = 'Invalid username or password. Please try again!'
+            return render_template('login.html', msg=error_msg)
         else:
             session['logged_in'] = True
-            flash('Succeeded in login!')
-    return render_template('login.html', error=error)
-
-# Logout
-@app.route('/logout')
-def logout():
-    session.pop('logged_in', None)
-    flash('Logged out.')
-    return redirect(url_for('login.html')) ######
+            user = User(username=request.form['username'], password=request.form['password'])
+            msg = 'Succeeded in login!'
+            return render_template('index.html', msg=msg, user=user)
+    return render_template('login.html', msg=msg)
 
 if __name__ == '__main__':
     app.run()
