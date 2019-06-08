@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flaskの練習｜トップページ</title>
+  </head>
+  <body>
+    {% if session.logged_in %}
+      {{ msg}}
+    <h1>ようこそ</h1>
+      <dl class="">
+        <dt>ユーザ名</dt>
+        <dd>{{ user.username }}</dd>
+        <dt>パスワード</dt>
+        <dd>{{ user.password }}</dd>
+      </dl>
+      <form class="" method="post">
+        <input type="submit" name="logout_button" value="logout">
+      </form>
+    {% endif %}
+   </body>
+</html>

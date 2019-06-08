@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flaskの練習｜ログイン画面</title>
+  </head>
+  <body>
+    {% if msg %}
+      {{ msg }}
+    {% endif %}
+    <h1>ログイン画面</h1>
+    <form class="" action="login" method="post">
+      <dl class="">
+        <dt>ユーザ名</dt>
+        <dd><input type="text" name="username"></dd>
+        <dt>パスワード</dt>
+        <dd><input type="password" name="password" required="required"></dd>
+      </dl>
+      <input type="submit" name="login_button" value="login" required="required">
+    </form>
+  </body>
+</html>
