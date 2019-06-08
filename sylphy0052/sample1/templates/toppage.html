@@ -1,0 +1,14 @@
+{% extends "layout.html" %}}
+{% block body %}
+    <h2>入力画面</h2>
+    <!-- post形式で/calcを実行する -->
+    <form action="/calc" method="post">
+      <dl>
+        <dt>Input:
+          <!-- 入力値をnumという変数に格納する -->
+        <dd><p>Num1: </p><input type="text" name="num1">
+        <dd><p>Num2: </p><input type="text" name="num2">
+        <dd><input type="submit" value="Calculator">
+      </dl>
+    </form>
+{% endblock %}
