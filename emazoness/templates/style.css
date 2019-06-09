@@ -1,0 +1,57 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+main{
+  width:600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.column{
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+}
+
+.column::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+main h2{
+  float: left;
+  color:rgb(148, 189, 255);
+
+}
+
+main input{
+  float: right;
+  border: none;
+  border-bottom: 3px solid rgb(150, 151, 164);
+  transition: all 0.5s;
+}
+
+main input:focus{
+  outline: 0;
+  border-bottom: 3px solid  rgb(129, 202, 255);
+}
+
+main input[name="login_btn"]{
+  float: right;
+  background-color:rgb(251, 251, 251);
+  color:rgb(148, 189, 255) ;
+  border: 3px solid rgb(148, 189, 255);
+  width: 100px;
+  height: 50px;
+  font-size: 18px;
+  transition: all 0.5s;
+}
+
+main input[name="login_btn"]:hover{
+  background-color: rgb(148, 189, 255);
+  color: white;
+  cursor: pointer;
+}
