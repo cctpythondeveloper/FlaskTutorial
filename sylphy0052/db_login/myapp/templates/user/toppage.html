@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block body %}
+<h2>Login Success!!</h2>
+<p>Hello {{ user.username }}</p>
+<table>
+  <tr>
+    <td>User ID: </td>
+    <td>{{ user.id }}</td>
+  </tr>
+  <tr>
+    <td>User Name: </td>
+    <td>{{ user.username }}</td>
+  </tr>
+  <tr>
+    <td>Password: </td>
+    <td>{{ user.password }}</td>
+  </tr>
+</table>
+{% endblock %}
