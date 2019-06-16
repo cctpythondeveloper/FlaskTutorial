@@ -7,7 +7,7 @@ def login_required(view):
     @wraps(view)
     def inner(*args, **kwargs):
         if not session.get('logged_in'):
-            return redirect(url_for('to_login'))
+            return redirect(url_for('login'))
         return view(*args, **kwargs)
     return inner
 

@@ -35,5 +35,8 @@ TODOS
 |:--|:--|:--|:---|
 |id|int|primary||
 |title|String(20)||タイトル|
-|content|String(100)||内容|
+|content|Text||内容|
 |userid|int|外部キー|USERSと紐付けるためのデータ|
+|tododate|DateTime||いつのToDoか|
+
+## データベースの作り方
