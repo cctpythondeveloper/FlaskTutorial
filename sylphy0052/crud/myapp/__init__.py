@@ -12,4 +12,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy(app)
 
+from myapp.views.user import user
+app.register_blueprint(user, url_prefix='/user')
+
 from myapp.views import view
