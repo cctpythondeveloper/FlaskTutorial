@@ -24,6 +24,7 @@ $ python server.py
 
 ## DB
 USERS
+
 |column_name|Type|Other|Description|
 |:--|:--|:--|:---|
 |id|int|primary||
@@ -31,6 +32,7 @@ USERS
 |password|String(20)||ログイン用パスワード|
 
 TODOS
+
 |column_name|Type|Other|Description|
 |:--|:--|:--|:---|
 |id|int|primary||
