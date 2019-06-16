@@ -32,6 +32,7 @@ def login():
                 return redirect(url_for('user.show_user_toppage', userid=users[0].id))
             else:
                 flash('Invalid User Name or Password')
+                return render_template('login.html')
     else:
         return render_template('login.html')
 
