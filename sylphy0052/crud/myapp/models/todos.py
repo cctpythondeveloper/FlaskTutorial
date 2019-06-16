@@ -1,13 +1,13 @@
 from myapp import db
-from datetime import datetime
 
 class Todos(db.Model):
     __tablename__ = 'todos'
+
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(20))
     content = db.Column(db.Text)
     todo_date = db.Column(db.DateTime)
-    user_id = db.Column(db.Integer，db.ForeignKey('users.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def __init__(self, title=None, content=None, todo_date=None, user_id=None):
         self.title = title
