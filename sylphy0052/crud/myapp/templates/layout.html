@@ -32,6 +32,12 @@
             <li class="nav-item">
               <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
             </li>
+            <li class="nav-item">
+              <a href="{{ url_for('todo.register_todo') }}" class="nav-link">New Todo</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('user.show_user_toppage') }}" class="nav-link">Top Page</a>
+            </li>
             {% endif %}
           </ul>
         </div>

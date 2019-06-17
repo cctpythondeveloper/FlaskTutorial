@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <h2>{{ todo.title }}</h2>
+  <br>
+  {{ todo.content }}
+
+  <br><br>
+  日時: {{ todo.todo_date }}
+  <br><br>
+  <div class="btn-group">
+    <form action="{{ url_for('todo.edit_todo', id=todo.id) }}" method="get">
+      <button type="submit" class="btn btn-secondary">Edit</button>
+    </form>
+    <form action="{{ url_for('todo.delete_todo', id=todo.id) }}" method="post">
+      <button type="submit" class="btn btn-danger" style="margin-left:5px">Delete</button>
+    </form>
+  </div>
+{% endblock %}
