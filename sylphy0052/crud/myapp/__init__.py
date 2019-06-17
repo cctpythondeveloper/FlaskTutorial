@@ -15,4 +15,7 @@ db = SQLAlchemy(app)
 from myapp.views.user import user
 app.register_blueprint(user, url_prefix='/user')
 
+from myapp.views.todo import todo
+app.register_blueprint(todo, url_prefix='/todo')
+
 from myapp.views import view
