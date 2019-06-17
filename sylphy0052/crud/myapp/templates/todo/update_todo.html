@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h2>Edit Todo Page</h2>
+<form action="{{ url_for('todo.edit_todo', id=todo.id) }}" method="post">
+    <div class="form-group">
+        <label for="from-group">Title: </label>
+        <input type="text" name="title" class="form-control" id="InputTitle" value="{{ todo.title }}">
+    </div>
+
+    <div class="form-group">
+        <label for="from-group">Content: </label>
+        <input type="text" name="content" class="form-control" id="InputContent" value="{{ todo.content }}">
+    </div>
+
+    <div class="form-group">
+        <label for="from-group">Todo Date: </label>
+        <input type="date" name="tododate" class="form-control" id="InputTodoDate" value="{{ todo.get_date_str() }}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+{% endblock %}

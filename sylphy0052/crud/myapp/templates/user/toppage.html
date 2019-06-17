@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+    <ul class="list-group list-group-flush">
+    {% for todo in todos %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ todo.title }}</h5>
+                <a href="{{ url_for('todo.show_detail', id=todo.id) }}" class="card-link">To Detail</a>
+            </div>
+        </div>
+    {% else %}
+        You have no ToDo
+    {% endfor %}
+    </ul>
+{% endblock %}

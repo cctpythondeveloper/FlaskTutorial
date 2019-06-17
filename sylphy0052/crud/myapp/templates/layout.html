@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Flask DB Login</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- common css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <!-- header -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <p class="navbar-brand">Flask Sample</p>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav navbar-right">
+            <!-- not login -->
+            {% if not session.logged_in %}
+            <li class="nav-item">
+              <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('user.to_register_user') }}" class="nav-link">Register User</a>
+            </li>
+            <!-- login -->
+            {% else %}
+            <li></li>
+            <li class="nav-item">
+              <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('todo.register_todo') }}" class="nav-link">New Todo</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ url_for('user.show_user_toppage') }}" class="nav-link">Top Page</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+
+      <!-- show flash message -->
+      {% for message in get_flashed_messages() %}
+      <div class="alert alert-info" role="alert">
+        {{ message }}
+      </div>
+      {% endfor %}
+
+      <!-- body -->
+      <div class="blog-body">
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+  </body>
+</html>
