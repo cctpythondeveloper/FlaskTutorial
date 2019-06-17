@@ -1,8 +1,9 @@
-from flask import request, redirect, url_for, render_template, flash, session
 from flask import Blueprint
-from myapp.controller.users_controller import insert_user
+from flask import request, render_template, flash, session
+
+from myapp.controller.todos_controller import search_todotbs
+from myapp.controller.users_controller import insert_user, search_user_by_id
 from myapp.views.view import login_required
-from myapp.controller.users_controller import search_user_by_id
 
 user = Blueprint('user', __name__)
 
@@ -26,8 +27,9 @@ def to_register_user():
         flash('User Name multiply Error')
         return render_template('user/register_user.html')
 
-@user.route('/<int:userid>')
+@user.route('/')
 @login_required
-def show_user_toppage(userid):
-    user = search_user_by_id(userid)
-    return render_template('user/toppage.html', user=user)
+def show_user_toppage():
+    user = search_user_by_id(session['user_id'])
+    todos = search_todotbs()
+    return render_template('user/toppage.html', user=user, todos=todos)
