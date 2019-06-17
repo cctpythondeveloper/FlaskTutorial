@@ -5,7 +5,7 @@
   {{ todo.content }}
 
   <br><br>
-  日時: {{ todo.todo_date }}
+  日時: {{ todo.get_date_str() }}
   <br><br>
   <div class="btn-group">
     <form action="{{ url_for('todo.edit_todo', id=todo.id) }}" method="get">

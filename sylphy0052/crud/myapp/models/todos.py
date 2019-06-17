@@ -14,3 +14,7 @@ class Todo(db.Model):
         self.content = content
         self.todo_date = todo_date
         self.user_id = user_id
+
+    def get_date_str(self):
+        return self.todo_date.strftime('%Y-%m-%d')
+

@@ -13,7 +13,8 @@ todo = Blueprint('todo', __name__)
 @login_required
 def register_todo():
     if request.method == 'GET':
-        return render_template('todo/register_todo.html')
+        current_date = dt.now().strftime('%Y-%m-%d')
+        return render_template('todo/register_todo.html', current_date=current_date)
 
     title = request.form['title']
     content = request.form['content']
@@ -46,7 +47,8 @@ def show_detail(id):
 @login_required
 def edit_todo(id):
     if request.method == 'GET':
-        return render_template('todo/update_todo.html', id=id)
+        todo = Todo.query.get(id)
+        return render_template('todo/update_todo.html', todo=todo)
 
     title = request.form['title']
     content = request.form['content']
@@ -63,7 +65,6 @@ def edit_todo(id):
         return render_template('todo/update_todo.html', id=id)
 
     if update_todotb(id, title, content, todo_date):
-        flash('Success Register Todo')
         return redirect(url_for('user.show_user_toppage'))
     else:
         flash('Error')
@@ -73,4 +74,4 @@ def edit_todo(id):
 @login_required
 def delete_todo(id):
     delete_todotb(id)
-    return render_template(url_for('user.show_user_toppage'))
+    return redirect(url_for('user.show_user_toppage'))
